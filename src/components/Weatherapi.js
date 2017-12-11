@@ -132,7 +132,7 @@ class Weatherapi extends React.Component {
             <div className="nopad x ">
               {this.state.icon && <Skycons icon={this.state.icon.toUpperCase().replace(/-/g, '_')}  color = 'white'  style = {{width:150, height:80}}/>} 
             </div>
-            <div className=" x marginbot">{this.state.temperature}<sup>o</sup> {this.state.summary}.</div>
+            <div className=" x marginbot">{this.state.temperature}<sup>o</sup>F {this.state.summary}.</div>
             <div className="x marginbot">{this.state.summarybig}</div>
             <div className="nopad x fontsmall">
             <span className="bold spanmargin">Wind:</span> {this.state.wind}mph    
