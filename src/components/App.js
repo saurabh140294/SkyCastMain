@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Maps from './Maps';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 class App extends React.Component {
