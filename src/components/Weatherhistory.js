@@ -1,3 +1,9 @@
+/*------------------------------------------
+Calls the time machine API of Dark SKY to get
+the temperature of one year back.
+-------------------------------------------*/
+
+
 import React from 'react';
 import api from '../../api';
 import Maps from './Maps';

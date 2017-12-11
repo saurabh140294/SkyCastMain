@@ -1,3 +1,8 @@
+/*-----------------------------
+Displays the weekly forecast 
+------------------------------*/
+
+
 import React from 'react';
 import Skycons from 'react-skycons';
 

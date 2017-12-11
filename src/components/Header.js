@@ -1,3 +1,9 @@
+/*------------------------------
+Sets the header of the project
+--------------------------------*/
+
+
+
 import React from 'react';
 
 const Header = ({ message }) => {

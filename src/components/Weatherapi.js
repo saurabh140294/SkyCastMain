@@ -1,3 +1,10 @@
+/*------------------------------------------
+Calls the Weather API and extracts the values 
+to display the current weather and hourly and 
+weekly forecast.
+-------------------------------------------*/
+
+
 import React from 'react';
 import api from '../../api';
 import Maps from './Maps';

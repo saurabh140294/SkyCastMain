@@ -1,3 +1,9 @@
+/*--------------------------------------------------------
+Creates the visual graphs of forcast day and history.
+--------------------------------------------------------*/
+
+
+
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 

@@ -1,7 +1,14 @@
+/*------------------------------------------
+Takes the input from user and calls the 
+maps api and passes lat and lng to wweather
+-------------------------------------------*/
+
+
 import React from 'react';
 var axios = require('axios');
 import Weatherapi from './Weatherapi';
 import cookie from 'react-cookies';
+
 
 class Maps extends React.Component 
 {
