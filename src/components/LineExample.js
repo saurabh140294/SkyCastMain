@@ -39,7 +39,6 @@ class LineExample extends React.Component {
 
 
 	componentWillReceiveProps(nextProps){
-		//this.setState({
 		this.state.data.labels=[];
 		this.state.data.datasets[0].data=[];
 		if(nextProps.daily != this.props.daily){
@@ -54,27 +53,25 @@ class LineExample extends React.Component {
 				this.state.data.datasets[0].data.push(label.temperature);
 			} );
 		}
-		//console.log("prop data =" + JSON.stringify(this.state.data));
-		//console.log("prop daily =" + JSON.stringify(nextProps.daily));
 	}
 
 
 	render() {
-	let line;
-    if(this.state.data.labels!='' && this.state.data.datasets.data!='') {
-      line = <Line 
-				data={this.state.data} 
-			    options={{
-			        maintainAspectRatio: false
-			    }}/>
-    } else {
-      line = null
-    }
+		let line;
+		if(this.state.data.labels!='' && this.state.data.datasets.data!='') {
+			line = <Line 
+			data={this.state.data} 
+			options={{
+				maintainAspectRatio: false
+			}}/>
+		} else {
+			line = null
+		}
 		return (
 			<div>
-			<div className="row hourwidth back">
-			{line}
-			</div>
+				<div className="row hourwidth back">
+					{line}
+				</div>
 			</div>
 			);
 	}

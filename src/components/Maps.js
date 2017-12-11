@@ -28,12 +28,12 @@ class Maps extends React.Component
 
   componentWillMount() { 
     this.setState({
-        id1: cookie.load('userId1'),
-        id2: cookie.load('userId2'),
-        id3: cookie.load('userId3'),
-        id4: cookie.load('userId4'),
-        id5: cookie.load('userId5')
-      });
+      id1: cookie.load('userId1'),
+      id2: cookie.load('userId2'),
+      id3: cookie.load('userId3'),
+      id4: cookie.load('userId4'),
+      id5: cookie.load('userId5')
+    });
   }
 
   handleChange(event) {
@@ -56,10 +56,8 @@ class Maps extends React.Component
     cookie.save('userId'+this.state.i, this.state.textbox);
 
     this.state.i = this.state.i + 1;
-    //console.log(this.state.textbox);
     axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+this.state.textbox+"&key=AIzaSyCfy5eDBybS2U8Iow2TPe1v_0ljJLATQKU")
     .then((resp)=>{
-      //console.log("maps resp: "+JSON.stringify(resp.data.results[0].geometry.location.lat));
       this.setState({
         lat: resp.data.results[0].geometry.location.lat,
         lng: resp.data.results[0].geometry.location.lng,
@@ -69,8 +67,6 @@ class Maps extends React.Component
         id4: cookie.load('userId4'),
         id5: cookie.load('userId5')
       });
-      //console.log(this.state.cookies);
-      //return resp.data;
     });
     event.preventDefault();
   }
@@ -94,21 +90,17 @@ class Maps extends React.Component
           <div className="col x">{this.state.id4}</div>
           <div className="col x">{this.state.id5}</div>
         </div>
-        <div className="row marginweek x marginleft">
+        <div className="row marginspan x marginleft">
           <form className="inputwidth" onSubmit={this.handleSubmit}>      
             <div className="input-group">
               <input type="text" value={this.state.textbox} onChange={this.handleChange} className="form-control" placeholder="Search for your location..." />
             </div>
           </form>
         </div>
-        
-        
         {this.state.lat && this.state.lng && <Weatherapi lat={this.state.lat} lng={this.state.lng}></Weatherapi>}
       </div>
       );
   }
-
-
 }
 
 export default Maps;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Skycons from 'react-skycons';
 
-const ContestPreview1 = (day) => (
+const Weekforecast = (day) => (
   	<div className="col">
   		<div className="nopad fontsmall x">{day.time}</div>
   		<div className="nopad x "><Skycons icon={day.icon.toUpperCase().replace(/-/g, '_')}  color = 'white'  style = {{width:75, height:40}}/></div>
@@ -11,4 +11,4 @@ const ContestPreview1 = (day) => (
   	</div>
 );
 
-export default ContestPreview1;
+export default Weekforecast;
