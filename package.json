@@ -13,7 +13,7 @@
   ],
   "author": "Saurabh",
   "engines": {
-    "node": "4.1.1"
+    "node": "6.0.0"
   },
   "license": "ISC",
   "dependencies": {
