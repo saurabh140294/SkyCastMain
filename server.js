@@ -1,7 +1,6 @@
 var sassMiddleware = require('node-sass-middleware');
 var path = require('path');
 var api = require('./api');
-require('dotenv/config');
 var express = require('express');
 
 

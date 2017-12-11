@@ -3,7 +3,6 @@ var axios = require('axios');
 import Weatherapi from './Weatherapi';
 import cookie from 'react-cookies';
 
-
 class Maps extends React.Component 
 {
   constructor(props) {
@@ -57,9 +56,7 @@ class Maps extends React.Component
     cookie.save('userId'+this.state.i, this.state.textbox);
 
     this.state.i = this.state.i + 1;
-    let key = process.env.MAPS_KEY;
-    console.log(key);
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+this.state.textbox+"&key="+key)
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+this.state.textbox+"&key=AIzaSyCfy5eDBybS2U8Iow2TPe1v_0ljJLATQKU")
     .then((resp)=>{
       this.setState({
         lat: resp.data.results[0].geometry.location.lat,

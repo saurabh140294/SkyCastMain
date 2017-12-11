@@ -1,6 +1,4 @@
 //import express from 'express';
-import dotenv from 'dotenv';
-dotenv.config();
 
 let fetch = require('node-fetch');
 var axios = require('axios');
@@ -10,7 +8,7 @@ module.exports = {
 	getCurrentWeather : function(lat,lng){
 
 		let darksky = 'https://api.darksky.net/forecast/';
-		let key = process.env.DARKSKY_KEY;
+		let key = '459a88376ba55c707aedcafe978c248e';
 		//let lat = 45.3483;
 		//let lng = -75.7584;
 		let uri = darksky + key + '/' + lat +','+ lng;
@@ -27,7 +25,7 @@ module.exports = {
 	getCurrentWeatherHist : function(lat,lng,oldtime){
 
 		let darksky = 'https://api.darksky.net/forecast/';
-		let key = process.env.DARKSKY_KEY;
+		let key = '459a88376ba55c707aedcafe978c248e';
 		//let lat = 45.3483;
 		//let lng = -75.7584;
 		let uri = darksky + key + '/' + lat +','+ lng + ',' + oldtime;
