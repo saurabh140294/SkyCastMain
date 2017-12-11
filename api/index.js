@@ -1,8 +1,10 @@
 //import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
 let fetch = require('node-fetch');
 var axios = require('axios');
-require('dotenv/config');
+
 
 module.exports = {	
 	getCurrentWeather : function(lat,lng){
