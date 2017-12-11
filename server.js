@@ -58,6 +58,6 @@ server.get('/getweatherhist', (req, res) => {
 
 server.use(express.static("public"));
 
-server.listen(process.env.port || 8080, () => {
+server.listen(process.env.PORT || 8080, () => {
   console.info('Express listening on port');
 });
