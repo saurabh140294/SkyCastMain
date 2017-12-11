@@ -1,0 +1,63 @@
+body {
+  padding-top: 54px;
+  background-color: #1e202b;
+  color: white; }
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px; } }
+
+.portfolio-item {
+  margin-bottom: 30px; }
+
+.table td {
+  text-align: center; }
+
+.table th {
+  text-align: center; }
+
+.x {
+  text-align: center; }
+
+.hourdata {
+  font-size: small; }
+
+.hourdataelem {
+  padding: 0px;
+  text-align: center; }
+
+.nopad {
+  padding: 0px !important;
+  margin: 0px !important; }
+
+.aligncenter {
+  text-align: center; }
+
+.marginweek {
+  margin-bottom: 50px; }
+
+.fontsmall {
+  font-size: small; }
+
+.hourwidth {
+  max-width: 100%;
+  height: auto; }
+
+.inputwidth {
+  width: 35%; }
+
+.marginleft {
+  margin-left: 40%; }
+
+.my-4 {
+  margin-bottom: 3.5rem !important; }
+
+.marginmain {
+  margin-left: 45%; }
+
+.marginspan {
+  margin-bottom: 20px; }
+
+.py-5 {
+  text-align: right;
+  width: 100%; }
