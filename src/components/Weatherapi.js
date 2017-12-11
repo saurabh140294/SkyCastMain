@@ -22,6 +22,11 @@ class Weatherapi extends React.Component {
     this.state = {
       temperature: '',
       summary: '',
+      summarybig: '',
+      wind:'',
+      humidity:'',
+      visibility:'',
+      pressure:'',
       time: '',
       icon: '',
       hourly: [],
@@ -59,6 +64,11 @@ class Weatherapi extends React.Component {
       this.setState({
         temperature: resp.data.currently.temperature,
         summary: resp.data.currently.summary,
+        wind: resp.data.currently.windSpeed,
+        visibility: resp.data.currently.visibility,
+        pressure: resp.data.currently.pressure,
+        humidity: resp.data.currently.humidity,
+        summarybig: resp.data.hourly.summary,
         time: resp.data.currently.time,
         icon: resp.data.currently.icon,
         hourly: resp.data.hourly.data,
@@ -94,6 +104,11 @@ class Weatherapi extends React.Component {
         this.setState({
           temperature: resp.data.currently.temperature,
           summary: resp.data.currently.summary,
+          wind: resp.data.currently.windSpeed,
+          visibility: resp.data.currently.visibility,
+          pressure: resp.data.currently.pressure,
+          humidity: resp.data.currently.humidity,
+          summarybig: resp.data.hourly.summary,
           icon: resp.data.currently.icon,
           hourly: resp.data.hourly.data,
           daily: resp.data.daily.data
@@ -111,13 +126,20 @@ class Weatherapi extends React.Component {
 
     return (
       <div className="container-fluid">
-        <h5 className="x">Today</h5>
+        <h5 className="x">Today in <span className="bold">{this.props.textbox}</span></h5>
         <div className="row marginweek">
           <div className="col">
             <div className="nopad x ">
               {this.state.icon && <Skycons icon={this.state.icon.toUpperCase().replace(/-/g, '_')}  color = 'white'  style = {{width:150, height:80}}/>} 
             </div>
-            <div className="nopad x">{this.state.temperature}<sup>o</sup> <br /> {this.state.summary}</div>
+            <div className=" x marginbot">{this.state.temperature}<sup>o</sup> {this.state.summary}.</div>
+            <div className="x marginbot">{this.state.summarybig}</div>
+            <div className="nopad x fontsmall">
+            <span className="bold spanmargin">Wind:</span> {this.state.wind}mph    
+            <span className="bold spanmargin">Humidity:</span> {this.state.humidity}%    
+            <span className="bold spanmargin">Visibility:</span> {this.state.visibility}mi    
+            <span className="bold spanmargin">Pressure:</span> {this.state.pressure}mb
+            </div>
           </div>
         </div>
         <div  className="marginspan"><span>Forecast for next 24 hours - </span></div>

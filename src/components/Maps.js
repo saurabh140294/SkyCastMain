@@ -104,7 +104,7 @@ class Maps extends React.Component
             </div>
           </form>
         </div>
-        {this.state.lat && this.state.lng && <Weatherapi lat={this.state.lat} lng={this.state.lng}></Weatherapi>}
+        {this.state.lat && this.state.lng && this.state.textbox && <Weatherapi lat={this.state.lat} lng={this.state.lng} textbox={this.state.textbox}></Weatherapi>}
       </div>
       );
   }
