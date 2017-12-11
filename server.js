@@ -1,9 +1,10 @@
-import config from './config';
-import sassMiddleware from 'node-sass-middleware';
-import path from 'path';
-import api from './api';
+var sassMiddleware = require('node-sass-middleware');
+var path = require('path');
+var api = require('./api');
+var express = require('express');
 
-import express from 'express';
+
+
 const server = express();
 
 server.use(sassMiddleware({
@@ -57,6 +58,6 @@ server.get('/getweatherhist', (req, res) => {
 
 server.use(express.static("public"));
 
-server.listen(config.port, () => {
-  console.info('Express listening on port', config.port);
+server.listen(process.env.port || 8080, () => {
+  console.info('Express listening on port');
 });
