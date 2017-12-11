@@ -3,7 +3,7 @@ import api from '../../api';
 import Maps from './Maps';
 import ContestPreview from './ContestPreview';
 import ContestPreview1 from './ContestPreview1';
-import Skycons from 'skycons-component';
+import Skycons from 'react-skycons';
 import Weatherhistory from './Weatherhistory';
 import LineExample from './LineExample';
 
@@ -22,8 +22,7 @@ class Weatherapi extends React.Component {
       time: '',
       icon: '',
       hourly: [],
-      daily: [],
-      oldtime: '1451606400'
+      daily: []
     };
   }
 
@@ -67,6 +66,8 @@ class Weatherapi extends React.Component {
             hourly: resp.data.hourly.data,
             daily: resp.data.daily.data
           });
+
+          console.log("hourlydata=" +JSON.stringify(this.state.icon));
       //return resp.data;
     });
   }
@@ -112,6 +113,7 @@ class Weatherapi extends React.Component {
             hourly: resp.data.hourly.data,
             daily: resp.data.daily.data
           });
+          console.log("hourlydata=" +JSON.stringify(this.state.icon));
       //return resp.data;
     });
     }
@@ -124,18 +126,15 @@ class Weatherapi extends React.Component {
   
 
   render() {
-    let skyconcomp;
-    if(this.state.icon!='') {
-      skyconcomp = <Skycons icon={this.state.icon}  iconColor = 'white'  style = {{width:64, height:64}}/>
-    } else {
-      skyconcomp = null
-    }
+
     return (
       <div className="container-fluid">
         <h5 className="x">Today</h5>
         <div className="row marginweek">
           <div className="col">
-            <div className="nopad x ">{skyconcomp} </div>
+            <div className="nopad x ">
+              {this.state.icon && <Skycons icon={this.state.icon.toUpperCase().replace(/-/g, '_')}  color = 'white'  style = {{width:150, height:80}}/>} 
+            </div>
             <div className="nopad x">{this.state.temperature}<sup>o</sup> <br /> {this.state.summary}</div>
           </div>
         </div>
