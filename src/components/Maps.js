@@ -63,7 +63,7 @@ class Maps extends React.Component
     cookie.save('userId'+this.state.i, this.state.textbox);
 
     this.state.i = this.state.i + 1;
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+this.state.textbox+"&key=AIzaSyCfy5eDBybS2U8Iow2TPe1v_0ljJLATQKU")
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+this.state.textbox+"&key="+MAPS_KEY)
     .then((resp)=>{
       this.setState({
         lat: resp.data.results[0].geometry.location.lat,

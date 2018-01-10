@@ -8,7 +8,7 @@ module.exports = {
 	getCurrentWeather : function(lat,lng){
 
 		let darksky = 'https://api.darksky.net/forecast/';
-		let key = 'bb7b02e2d4cc5e8762b64132e755c29d';
+		let key = MAPS_KEY;
 		//let lat = 45.3483;
 		//let lng = -75.7584;
 		let uri = darksky + key + '/' + lat +','+ lng;
@@ -25,7 +25,7 @@ module.exports = {
 	getCurrentWeatherHist : function(lat,lng,oldtime){
 
 		let darksky = 'https://api.darksky.net/forecast/';
-		let key = 'bb7b02e2d4cc5e8762b64132e755c29d';
+		let key = MAPS_KEYs;
 		//let lat = 45.3483;
 		//let lng = -75.7584;
 		let uri = darksky + key + '/' + lat +','+ lng + ',' + oldtime;
